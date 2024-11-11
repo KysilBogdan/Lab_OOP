@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <limits>  // Для numeric_limits
+#include <limits>
 using namespace std;
 
 class Book {
@@ -19,7 +19,7 @@ public:
     // Метод для введення даних
     void inputData() {
         cout << "Enter book title: ";
-        cin.ignore();  // Очищаємо буфер перед введенням рядка
+        cin.ignore();  
         getline(cin, title);  // Вводимо назву книги
         
         cout << "Enter author: ";
@@ -27,9 +27,9 @@ public:
         
         cout << "Enter price: ";
         while (!(cin >> price)) { // перевірка на коректність введення ціни
-            cin.clear();  // очищаємо стан потоку
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');  // очищаємо буфер
-            cout << "Invalid input for price. Please enter a valid price: ";
+            cin.clear();  
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');  
+            cout << "Неправильне введення ціни. Будь ласка, введіть правильну ціну: ";
         }
     }
 
@@ -75,11 +75,11 @@ int main() {
     // Введення нових даних для book1
     cout << "\nEnter new details for book1:" << endl;
     book1.inputData();
-    book1.outputData();
 
-    // Присвоєння значення полям book2
-    cout << "\nEnter new details for book2:" << endl;
-    book2.setData("1984", "George Orwell", 12.50);
+    // Виведення даних обох книг після введення
+    cout << "\nData for book1:" << endl;
+    book1.outputData();
+    cout << "\nData for book2:" << endl;
     book2.outputData();
 
     return 0;
