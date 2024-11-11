@@ -36,8 +36,7 @@ int main() {
         double y = calculateY(a, b, x);
 
         // Виведення результату
-        cout << "Результат y = " << fixed << setprecision(4) << y << endl;
-
+        cout << "Результат y = " << y << endl;
         // Запит на повторення
         cout << "Бажаєте виконати розрахунок ще раз? (y/n): ";
         cin >> choice;
