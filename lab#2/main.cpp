@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include <math.h>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
 
 // Функція для обчислення y
 double calculateY(double a, double b, double x) {
@@ -23,25 +25,25 @@ int main() {
 
     do {
         // Введення значень параметрів a, b та x
-        printf("Введіть значення a: ");
-        scanf("%lf", &a);
-        printf("Введіть значення b: ");
-        scanf("%lf", &b);
-        printf("Введіть значення x: ");
-        scanf("%lf", &x);
+        cout << "Введіть значення a: ";
+        cin >> a;
+        cout << "Введіть значення b: ";
+        cin >> b;
+        cout << "Введіть значення x: ";
+        cin >> x;
 
         // Обчислення y
         double y = calculateY(a, b, x);
 
         // Виведення результату
-        printf("Результат y = %.4f\n", y);
+        cout << "Результат y = " << fixed << setprecision(4) << y << endl;
 
         // Запит на повторення
-        printf("Бажаєте виконати розрахунок ще раз? (y/n): ");
-        scanf(" %c", &choice);  // Пробіл перед %c потрібен, щоб ігнорувати новий рядок від попереднього введення
+        cout << "Бажаєте виконати розрахунок ще раз? (y/n): ";
+        cin >> choice;
 
     } while(choice == 'y' || choice == 'Y');
 
-    printf("Програма завершена.\n");
+    cout << "Програма завершена." << endl;
     return 0;
 }
